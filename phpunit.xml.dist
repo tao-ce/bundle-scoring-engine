@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+         failOnRisky="true"
+         failOnWarning="true"
+>
+    <coverage>
+        <include>
+            <directory>./</directory>
+        </include>
+        <exclude>
+            <directory>./Tests</directory>
+            <directory>./vendor</directory>
+        </exclude>
+    </coverage>
+    <php>
+        <env name="KERNEL_CLASS" value="OAT\Bundle\ScoringEngineBundle\Tests\Kernel\TestKernel"/>
+    </php>
+    <testsuites>
+        <testsuite name="functional">
+            <directory>./Tests/Functional/</directory>
+        </testsuite>
+        <testsuite name="unit">
+            <directory>./Tests/Unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
